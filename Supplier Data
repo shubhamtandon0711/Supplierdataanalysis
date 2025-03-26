@@ -1,0 +1,95 @@
+Work Instruction: Processing Supplier Data for Analysis on Databricks
+This guide outlines the steps to process supplier data from email to Databricks, analyze the data, and take necessary actions based on the results.
+
+Table of Contents
+Purpose
+Prerequisites
+Step-by-Step Instructions
+1. Collect Supplier Data from Email
+2. Combine Supplier Data into a Single Sheet
+3. Add Additional Column Data
+4. Clean the Data Using Macro
+5. Save Data in CSV Format
+6. Upload Data to Databricks
+Notes
+Revision History
+Contacts
+Purpose
+This document provides a step-by-step guide for processing supplier data from email, consolidating and cleaning it for analysis on Databricks, and managing actions based on the results.
+
+Prerequisites
+Access to the public email inbox: global.supplier@qiagen.com
+
+If you lack access, contact:
+Tom Dilger - Tom.dilger@qiagen.com
+John Schmitt - John.Schmitt@qiagen.com
+Access to the designated folders:
+
+Local and SharePoint folders for storing supplier files.
+For SharePoint access, contact:
+Tom Dilger or John Schmitt.
+Basic knowledge of Power Query in Excel:
+
+Learn more by watching this 16-minute tutorial.
+Access to the Excel macro file: Data Cleaning File for Supplier (macro must be recorded).
+
+Permissions for Databricks:
+
+Upload files to DBFS and download results.
+Requires a Databricks license.
+Step-by-Step Instructions
+1. Collect Supplier Data from Email
+Open the public inbox global.supplier@qiagen.com.
+Download all supplier data files and save them in a folder for the current month (e.g., March 2025).
+Upload the files to the SharePoint folder:
+Path: Monthly Supplier Data Raw.
+Ensure files have a consistent structure.
+Save the files locally in one folder for further processing.
+2. Combine Supplier Data into a Single Sheet
+Open Excel and use Power Query:
+Go to Data > Get Data > From File > From Folder.
+Browse to the folder containing supplier files.
+Click Combine and Transform.
+Delete any extra sheets (e.g., Sheet1).
+3. Add Additional Column Data
+Add two columns:
+Internal Stock Level (‘Internal stock at Hilden’):
+Extracted from SAP data using VLOOKUP and COUNTIF formulas.
+Recommended Stock Level:
+Input from the monthly forecast sheet using XLOOKUP.
+4. Clean the Data Using Macro
+Open Data Cleaning File for Supplier.
+Copy combined data into the template.
+Run the macro:
+Go to Developer > Macros.
+Select datacleaning and click Run.
+5. Save Data in CSV Format
+Save the cleaned file:
+Go to File > Save As.
+Select CSV (Comma delimited).
+Name the file appropriately (e.g., Supplierdata_Cleaned_Mar_2025.csv).
+6. Upload Data to Databricks
+Open Databricks and go to the DBFS Browser.
+Click Upload and select the saved CSV file.
+Verify the upload.
+Notes
+Always verify data accuracy after cleaning and before uploading.
+Maintain backups of all files locally and on SharePoint.
+Use consistent naming conventions for all files.
+Revision History
+Version	Date	Author	Description
+1.0	2025-03-31	Shubham Tandon	Work instructions for supplier data analysis
+Contacts
+For assistance, contact:
+
+Databricks-related issues:
+
+Clemens Mahlmeister - Clemens.Mahlmeister@qiagen.com
+Emil Duong - emil.duong@qiagen.com
+Adam Sulik - adam.sulik@contractor.qiagen.com
+Project Manager:
+
+Tom Dilger - Tom.dilger@qiagen.com
+Supplier Data Issues:
+
+Contact the supplier directly or reach John Schmitt - John.Schmitt@qiagen.com.
